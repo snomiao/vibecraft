@@ -1,5 +1,7 @@
 # VibeCraft
 
+![](assets/readme/vibecraft-workspace-example.png)
+
 **RTS-Style AI Agent Management Interface**
 
 VibeCraft is an Electron application that lets you manage AI coding agents (Claude Code and ChatGPT Codex) using a real-time strategy (RTS) game interface. Think of it like commanding units in a strategy game, but instead of soldiers, you're managing AI assistants that help you code.
