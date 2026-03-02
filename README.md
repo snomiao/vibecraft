@@ -25,8 +25,9 @@ VibeCraft transforms AI agent management into an intuitive, visual experience. I
 
 - `user-docs/` - user-facing mechanics and feature guides
 - `technical-docs/` - technical reference material
-- `CODEBASE.md` - architecture and implementation map
-- `TESTING.md` - test modes and automation details
+- `technical-docs/Architecture/CODEBASE.md` - architecture and implementation map
+- `technical-docs/Reference/TESTING.md` - test modes and automation details
+- `technical-docs/Reference/paywall.md` - subscription and paywall behavior notes
 
 ## Quick Start
 
@@ -392,7 +393,7 @@ When licensing checks are enabled and the device is inactive, the subscription p
 
 ## Development
 
-See `technical-docs/` and `CODEBASE.md` for technical documentation.
+See `technical-docs/` and `technical-docs/Architecture/CODEBASE.md` for technical documentation.
 
 - Run `bun run typecheck` after making changes to ensure the Electron preload/renderer contracts stay in sync.
 
@@ -427,7 +428,7 @@ If Playwright browsers are not installed on your machine yet:
 bunx playwright install
 ```
 
-See `TESTING.md` for test-mode and development overrides.
+See `technical-docs/Reference/TESTING.md` for test-mode and development overrides.
 
 ### Styling & Themes
 
@@ -437,7 +438,7 @@ The renderer consumes a layered theme system:
 - **Component overrides** are optional tokens. When supplied they let a theme customize specific treatments (title glow, menu bevels, world-card gradients); when absent the CSS falls back to the foundation palette.
 - **Theme modules** are optional hooks for bespoke effects (particles, animated overlays, etc.) that components mount only if the theme exports them.
 
-`ThemeProvider` injects the foundation variables, applies overrides, and exposes modules to React components. See `CODEBASE.md` and `THEME_GUIDE.md` for deeper details and authoring guidelines.
+`ThemeProvider` injects the foundation variables, applies overrides, and exposes modules to React components. See `technical-docs/Architecture/CODEBASE.md` and `technical-docs/Reference/THEME_GUIDE.md` for deeper details and authoring guidelines.
 
 When building new UI:
 

@@ -131,7 +131,7 @@ Follow this checklist whenever you add or modify renderer UI:
 2. **Use theme fonts** – apply `var(--font-base)`, `var(--font-display)`, or `var(--font-mono)` rather than literal `font-family` strings.
 3. **Provide fallbacks for optional vars** – `var(--home-button-hover-start, var(--home-button-gradient-start))`.
 4. **Decide foundation vs. override** – if the UI breaks without a value, add a foundation primitive; otherwise use an override or module hook.
-5. **Document new tokens** – update this guide (and CODEBASE.md) if you add primitives or toggles.
+5. **Document new tokens** – update this guide (and `../Architecture/CODEBASE.md`) if you add primitives or toggles.
 6. **Expose module slots deliberately** – `const { activeTheme } = useTheme(); activeTheme.modules?.hudOverlay?.({ ...props })`.
 7. **Test without overrides** – temporarily comment out overrides in the default theme to ensure the fallback path looks acceptable.
 

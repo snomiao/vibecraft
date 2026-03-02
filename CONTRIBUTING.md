@@ -35,7 +35,7 @@ Thanks for your interest in improving AgentCraft.
 - Keep pull requests focused and small when possible.
 - Include the related bead issue IDs.
 - Describe behavior changes and test coverage in the PR body.
-- If you changed architecture-level behavior, update `vibecraft/CODEBASE.md`.
+- If you changed architecture-level behavior, update `technical-docs/Architecture/CODEBASE.md`.
 
 ## Coding Expectations
 

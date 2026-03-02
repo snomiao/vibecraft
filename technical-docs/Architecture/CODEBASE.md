@@ -362,7 +362,7 @@ Main application component with routing:
 - Use `workspaceClient` (`src/renderer/services/workspaceClient.ts`) as the only place that touches `window.electronAPI`.
 - Keep side-effect orchestration in hooks (`useWorkspaceEntities`, `useWorktreeConflicts`, `useTerminalManager`) and pass down plain props/callbacks to UI components.
 - Inline rename dropdown (with available-folder relink) stays in canvas components; long-running flows (worktree merge, conflict polling, detach cascade) stay in hooks/services to avoid UI bloat.
-- When reviewing UI changes, verify components stay consistent with the theme system (see `THEME_GUIDE.md` and theme tokens) rather than hard-coding colors or spacing.
+- When reviewing UI changes, verify components stay consistent with the theme system (see `../Reference/THEME_GUIDE.md` and theme tokens) rather than hard-coding colors or spacing.
 
 #### `components/canvas/Canvas.tsx`
 
@@ -690,7 +690,7 @@ Applying that rule keeps the essential set small (title/subtitle styles, backgro
 3. Optionally export theme modules for bespoke behavior (e.g., `menuButtonDecoration`). Modules receive controlled props so they can render additional JSX/CSS safely.
 4. (Optional) expose the theme in the UI via `useTheme()` switching logic.
 
-`ThemeProvider` applies the foundation variables to `document.documentElement`, merges optional overrides, and wires up any registered modules. Refer to `THEME_GUIDE.md` for a complete description of the primitive schema and authoring workflow. This layered approach keeps themes strongly typed while also allowing radically different looks without bloating the “essential” contract.
+`ThemeProvider` applies the foundation variables to `document.documentElement`, merges optional overrides, and wires up any registered modules. Refer to `../Reference/THEME_GUIDE.md` for a complete description of the primitive schema and authoring workflow. This layered approach keeps themes strongly typed while also allowing radically different looks without bloating the “essential” contract.
 
 Renderer audio selection is resolved independently from theme visuals. The effective sound pack is selected with precedence: `settings.audio.soundPackOverrideId` -> `activeTheme.modules.audio.defaultSoundPackId` -> `default`.
 
