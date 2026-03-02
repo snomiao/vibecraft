@@ -1,0 +1,204 @@
+/* Browser entity window */
+.browser-entity-wrapper {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  cursor: default;
+}
+
+.browser-entity-wrapper.pass-through,
+.browser-entity-wrapper.pass-through * {
+  pointer-events: none;
+}
+
+.browser-entity-wrapper.pass-through .windowed-selection-shield {
+  pointer-events: auto;
+}
+
+.workspace-canvas-stage.pass-through-active .browser-entity-wrapper,
+.workspace-canvas-stage.pass-through-active .browser-entity-wrapper * {
+  pointer-events: none;
+}
+
+.workspace-canvas-stage.pass-through-active .browser-entity-wrapper .windowed-selection-shield {
+  pointer-events: auto;
+}
+
+.browser-entity-wrapper.selected {
+  border-color: var(--selection-ring);
+  box-shadow: 0 0 20px var(--agent-glow);
+}
+
+.browser-entity-wrapper.resizing {
+  opacity: 0.9;
+}
+
+.browser-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+  cursor: move;
+}
+
+.browser-title-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.browser-favicon {
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.browser-title {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.browser-window-controls {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.browser-minimize-btn,
+.browser-close-btn {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all 0.15s;
+}
+
+.browser-minimize-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.browser-close-btn:hover {
+  background: var(--error);
+  color: white;
+}
+
+.browser-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.browser-controls {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.browser-nav-btn {
+  width: 28px;
+  height: 28px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: all 0.15s;
+}
+
+.browser-nav-btn:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--accent-primary);
+}
+
+.browser-url-bar {
+  flex: 1;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.browser-url-input {
+  flex: 1;
+  padding: 0.4rem 0.75rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: inherit;
+}
+
+.browser-url-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.browser-go-btn {
+  width: 28px;
+  height: 28px;
+  background: var(--accent-primary);
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all 0.15s;
+}
+
+.browser-go-btn:hover {
+  background: var(--accent-secondary);
+}
+
+.browser-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  min-height: 0;
+}
+
+.browser-content webview {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.workspace-canvas-stage.pan-optimizing .browser-entity-wrapper {
+  box-shadow: none !important;
+  transition: none !important;
+}

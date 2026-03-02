@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Pixel art wizard based on homescreen character -->
+  <!-- Bald head -->
+  <rect x="12" y="2" width="8" height="2" fill="#D4A574"/>
+  <rect x="10" y="4" width="12" height="2" fill="#D4A574"/>
+  <rect x="10" y="6" width="12" height="2" fill="#D4A574"/>
+  <!-- Eyes -->
+  <rect x="11" y="6" width="2" height="2" fill="#2C1810"/>
+  <rect x="17" y="6" width="2" height="2" fill="#2C1810"/>
+  <!-- Beard (gray) -->
+  <rect x="10" y="8" width="12" height="2" fill="#9CA3AF"/>
+  <rect x="11" y="10" width="10" height="2" fill="#9CA3AF"/>
+  <rect x="12" y="12" width="8" height="2" fill="#9CA3AF"/>
+  <rect x="13" y="14" width="6" height="2" fill="#9CA3AF"/>
+  <rect x="14" y="16" width="4" height="2" fill="#9CA3AF"/>
+  <!-- Dark robes -->
+  <rect x="8" y="10" width="3" height="2" fill="#3D2817"/>
+  <rect x="21" y="10" width="3" height="2" fill="#3D2817"/>
+  <rect x="6" y="12" width="6" height="2" fill="#3D2817"/>
+  <rect x="20" y="12" width="6" height="2" fill="#3D2817"/>
+  <rect x="4" y="14" width="8" height="2" fill="#3D2817"/>
+  <rect x="20" y="14" width="8" height="2" fill="#3D2817"/>
+  <rect x="4" y="16" width="8" height="2" fill="#3D2817"/>
+  <rect x="20" y="16" width="8" height="2" fill="#3D2817"/>
+  <rect x="6" y="18" width="6" height="2" fill="#3D2817"/>
+  <rect x="20" y="18" width="6" height="2" fill="#3D2817"/>
+  <!-- Hands -->
+  <rect x="4" y="18" width="2" height="2" fill="#D4A574"/>
+  <rect x="26" y="18" width="2" height="2" fill="#D4A574"/>
+  <!-- Blue magical energy -->
+  <rect x="10" y="22" width="2" height="2" fill="#60A5FA"/>
+  <rect x="20" y="22" width="2" height="2" fill="#60A5FA"/>
+  <rect x="12" y="24" width="2" height="2" fill="#3B82F6"/>
+  <rect x="18" y="24" width="2" height="2" fill="#3B82F6"/>
+  <rect x="14" y="26" width="4" height="2" fill="#2563EB"/>
+  <rect x="13" y="28" width="6" height="2" fill="#60A5FA"/>
+  <rect x="15" y="30" width="2" height="2" fill="#93C5FD"/>
+  <!-- Magic sparkles -->
+  <rect x="8" y="24" width="2" height="2" fill="#93C5FD" opacity="0.7"/>
+  <rect x="22" y="24" width="2" height="2" fill="#93C5FD" opacity="0.7"/>
+  <rect x="16" y="20" width="2" height="2" fill="#BFDBFE" opacity="0.5"/>
+</svg>

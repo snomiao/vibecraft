@@ -1,0 +1,110 @@
+.tutorial-complete-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 14, 18, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+  padding: 24px;
+}
+
+.tutorial-complete-card {
+  background: #151922;
+  border: 2px solid rgba(250, 204, 21, 0.8);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 480px;
+  width: 100%;
+  color: #f8fafc;
+  box-shadow: 0 24px 60px rgba(5, 7, 12, 0.45);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tutorial-complete-intro h2 {
+  margin: 8px 0 12px;
+  font-size: 24px;
+}
+
+.tutorial-complete-intro p {
+  margin: 0;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.tutorial-complete-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  color: #facc15;
+  margin: 0;
+}
+
+.tutorial-complete-button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tutorial-complete-button.primary {
+  background: #facc15;
+  color: #111827;
+}
+
+.tutorial-complete-button.primary:hover:not(:disabled) {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.tutorial-complete-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.tutorial-complete-skip {
+  background: none;
+  border: none;
+  color: #64748b;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.tutorial-complete-skip:hover:not(:disabled) {
+  color: #94a3b8;
+}
+
+.tutorial-complete-skip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tutorial-complete-error {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid rgba(231, 76, 60, 0.4);
+  color: #f4c7c7;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 520px) {
+  .tutorial-complete-card {
+    padding: 24px;
+  }
+
+  .tutorial-complete-intro h2 {
+    font-size: 20px;
+  }
+}

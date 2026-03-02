@@ -1,0 +1,175 @@
+/* Modal dialogs */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.dialog-content {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  min-width: 400px;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.dialog-header {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dialog-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.dialog-message {
+  padding: 1rem 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.dialog-message.dialog-error {
+  color: var(--error);
+}
+.dialog-message.dialog-warning {
+  color: var(--warning);
+}
+
+.dialog-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin: 0 1.5rem;
+  font-family: inherit;
+}
+
+.dialog-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.dialog-btn {
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.15s;
+}
+
+.dialog-btn.cancel {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.dialog-btn.cancel:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.dialog-btn.confirm {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+.dialog-btn.confirm:hover {
+  background: var(--accent-secondary);
+}
+
+.dialog-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Folder select dialog */
+.folder-select-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 1rem 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-tertiary);
+}
+
+.folder-select-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.folder-select-item:last-child {
+  border-bottom: none;
+}
+
+.folder-select-item:hover {
+  background: var(--bg-elevated);
+}
+
+.folder-select-item.selected {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.folder-select-item.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.folder-select-item .folder-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.folder-select-item .folder-name {
+  font-weight: 500;
+}
+
+.folder-select-item .folder-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.folder-select-item .folder-path {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  word-break: break-all;
+}
+
+.folder-select-item .folder-tag {
+  margin-left: auto;
+  background: var(--bg-elevated);
+  border-radius: 12px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}

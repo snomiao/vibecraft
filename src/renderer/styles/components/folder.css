@@ -1,0 +1,149 @@
+/* Folder entities */
+.folder-label {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-base);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  color: var(--folder-label-color);
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000,
+    0 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Folder entity - buildings are ~2x the size of units */
+.folder-entity .folder-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+
+.folder-entity.magnetized .folder-icon {
+  filter: drop-shadow(0 0 10px rgba(245, 194, 75, 0.9));
+  transform: scale(1.05);
+}
+
+.folder-entity.worktree .folder-icon {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+.folder-entity.conflict .folder-icon {
+  filter: drop-shadow(0 4px 10px rgba(255, 68, 68, 0.7));
+}
+
+.folder-entity .selection-ring {
+  width: 88px;
+  height: 88px;
+}
+
+.folder-entity .folder-rename-inline {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.35rem;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.folder-entity .folder-rename-input {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 0.25rem 0.4rem;
+  font-size: 0.85rem;
+  min-width: 140px;
+}
+
+.folder-entity .folder-rename-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.folder-entity .folder-rename-dropdown-btn {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.9rem;
+}
+
+.folder-entity .folder-rename-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  min-width: 220px;
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  z-index: var(--z-entity-dropdown);
+}
+
+.folder-entity .folder-rename-dropdown::-webkit-scrollbar {
+  width: 8px;
+}
+
+.folder-entity .folder-rename-dropdown::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 8px;
+}
+
+.folder-entity .folder-rename-dropdown::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 8px;
+}
+
+.folder-entity .folder-rename-option {
+  padding: 0.45rem 0.6rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.folder-entity .folder-rename-option:hover {
+  background: var(--bg-elevated);
+}
+
+.folder-entity .folder-rename-option .option-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.folder-entity .folder-rename-option .option-path {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  word-break: break-all;
+}
+
+.folder-entity .folder-rename-option.disabled {
+  cursor: default;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.folder-entity.renaming {
+  z-index: var(--z-entity-dropdown);
+}

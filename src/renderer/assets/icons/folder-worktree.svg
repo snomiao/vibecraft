@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Worktree folder - rich yellow theme -->
+
+  <!-- Main body -->
+  <rect x="6" y="16" width="52" height="42" rx="3" fill="#C9A825"/>
+  <rect x="8" y="18" width="48" height="38" rx="2" fill="#E0C040"/>
+
+  <!-- Folder tab -->
+  <path d="M6,20 L6,12 C6,9 8,7 11,7 L22,7 L26,12 L53,12 C56,12 58,14 58,17 L58,20 Z" fill="#C9A825"/>
+  <path d="M8,18 L8,14 C8,12 9,11 11,11 L21,11 L25,15 L53,15 C55,15 56,16 56,18 Z" fill="#EDD860"/>
+
+  <!-- Simple document icon in center -->
+  <rect x="22" y="28" width="20" height="24" rx="2" fill="#A8901C"/>
+  <rect x="24" y="30" width="16" height="20" rx="1" fill="#F5EFC0"/>
+  <rect x="27" y="35" width="10" height="2" rx="1" fill="#E0C040"/>
+  <rect x="27" y="40" width="8" height="2" rx="1" fill="#E0C040"/>
+  <rect x="27" y="45" width="10" height="2" rx="1" fill="#E0C040"/>
+</svg>

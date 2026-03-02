@@ -1,0 +1,105 @@
+/* Workspace layout */
+.workspace-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+}
+
+.workspace-main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.workspace-canvas-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.workspace-canvas-stage {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.workspace-performance-overlay {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3200;
+  min-width: 220px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(11, 16, 24, 0.92);
+  color: #f4f7ff;
+  font-family: var(--font-base);
+  font-size: 12px;
+  line-height: 1.25;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+.workspace-performance-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.workspace-performance-tier {
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.workspace-performance-tier.tier-normal {
+  background: rgba(56, 142, 60, 0.24);
+  color: #90ee90;
+  border: 1px solid rgba(56, 142, 60, 0.6);
+}
+
+.workspace-performance-tier.tier-reduced {
+  background: rgba(255, 179, 0, 0.2);
+  color: #ffd166;
+  border: 1px solid rgba(255, 179, 0, 0.55);
+}
+
+.workspace-performance-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.workspace-performance-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.workspace-performance-row span {
+  color: #d6e1ff;
+}
+
+.workspace-performance-row strong {
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.workspace-performance-footnote {
+  margin-top: 8px;
+  color: #a2b2d9;
+  font-size: 10px;
+}

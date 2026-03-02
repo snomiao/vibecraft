@@ -1,0 +1,5 @@
+dist
+node_modules
+.electron-home
+package-lock.json
+bun.lock

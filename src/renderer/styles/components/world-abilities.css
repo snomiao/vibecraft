@@ -1,0 +1,53 @@
+/* World ability toolbar */
+.world-ability-panel {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.15rem;
+  padding: 0.25rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.world-ability-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.05rem;
+  padding: 0.1rem 0.2rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  min-width: 55px;
+}
+
+.world-ability-btn:hover {
+  background: var(--bg-elevated);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.world-ability-btn:active {
+  transform: translateY(0);
+}
+
+.world-ability-icon {
+  width: 2.9rem;
+  height: 2.9rem;
+  object-fit: contain;
+}
+
+.world-ability-label {
+  font-size: 0.42rem;
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 1;
+}

@@ -1,0 +1,77 @@
+{
+  "appId": "com.vibecraft.app",
+  "productName": "VibeCraft",
+  "icon": "assets/icons/icon",
+  "npmRebuild": false,
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist/**/*",
+    "package.json",
+    "assets/tutorial/**/*",
+    "node_modules/**/*",
+    "!**/*.map",
+    "!**/node_modules/posthog-js/**",
+    "!**/node_modules/@opentelemetry/**",
+    "!**/node_modules/@playwright/**",
+    "!**/node_modules/@testing-library/**",
+    "!**/node_modules/@types/**",
+    "!**/node_modules/@vitejs/**",
+    "!**/node_modules/@vitest/**",
+    "!**/node_modules/@eslint/**",
+    "!**/node_modules/protobufjs/**",
+    "!**/node_modules/core-js/**",
+    "!**/node_modules/electron/**",
+    "!**/node_modules/electron-builder/**",
+    "!**/node_modules/electron-rebuild/**",
+    "!**/node_modules/eslint/**",
+    "!**/node_modules/eslint-plugin-react/**",
+    "!**/node_modules/eslint-plugin-react-hooks/**",
+    "!**/node_modules/eslint-plugin-react-refresh/**",
+    "!**/node_modules/globals/**",
+    "!**/node_modules/jsdom/**",
+    "!**/node_modules/playwright/**",
+    "!**/node_modules/prettier/**",
+    "!**/node_modules/preact/**",
+    "!**/node_modules/react/**",
+    "!**/node_modules/react-dom/**",
+    "!**/node_modules/dompurify/**",
+    "!**/node_modules/typescript/**",
+    "!**/node_modules/typescript-eslint/**",
+    "!**/node_modules/vite/**",
+    "!**/node_modules/vite-plugin-electron/**",
+    "!**/node_modules/vite-plugin-electron-renderer/**",
+    "!**/node_modules/vitest/**",
+    "!**/node_modules/xterm/**",
+    "!**/node_modules/xterm-addon-fit/**"
+  ],
+  "extraResources": [
+    {
+      "from": "resources/mcp",
+      "to": "mcp",
+      "filter": ["**/*"]
+    },
+    {
+      "from": "resources/env",
+      "to": "env",
+      "filter": ["**/*"]
+    }
+  ],
+  "protocols": [
+    {
+      "name": "VibeCraft",
+      "schemes": ["vibecraft"]
+    }
+  ],
+  "mac": {
+    "target": ["dmg", "zip"],
+    "category": "public.app-category.developer-tools"
+  },
+  "win": {
+    "target": ["nsis", "zip"]
+  },
+  "linux": {
+    "target": ["AppImage", "deb"]
+  }
+}

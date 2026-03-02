@@ -1,0 +1,109 @@
+.subscribe-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(12, 14, 18, 0.65);
+  z-index: 9500;
+  padding: 24px;
+}
+
+.subscribe-card {
+  position: relative;
+  background: #151922;
+  border: 2px solid rgba(250, 204, 21, 0.8);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 480px;
+  width: 100%;
+  color: #f8fafc;
+  box-shadow: 0 24px 60px rgba(5, 7, 12, 0.45);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.subscribe-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.subscribe-close:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.subscribe-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.subscribe-header h2 {
+  margin: 0 0 0.5rem;
+  font-size: 24px;
+}
+
+.subscribe-header p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.subscribe-error {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid rgba(231, 76, 60, 0.4);
+  color: #f4c7c7;
+  font-size: 0.9rem;
+}
+
+.subscribe-button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: #facc15;
+  color: #111827;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.subscribe-button:hover:not(:disabled) {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.subscribe-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 520px) {
+  .subscribe-card {
+    padding: 24px;
+  }
+
+  .subscribe-header h2 {
+    font-size: 20px;
+  }
+}

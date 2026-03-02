@@ -1,0 +1,551 @@
+/* Settings Screen - Sidebar + Content Panel Layout */
+
+.settings-screen {
+  position: fixed;
+  top: 38px; /* below titlebar */
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 38px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #0c0e14;
+  color: var(--text-primary);
+}
+
+.settings-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: 100%;
+}
+
+.settings-content-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.settings-content-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+/* Section layout (used by each section component) */
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.settings-section-header {
+  margin-bottom: 0;
+}
+
+.settings-section-header h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.settings-section-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.settings-section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Card styles */
+.settings-card {
+  background: rgba(20, 24, 32, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.settings-card.muted {
+  background: rgba(14, 18, 24, 0.4);
+}
+
+.settings-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1rem 1.25rem;
+}
+
+.settings-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.settings-card-icon.success {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.settings-card-icon.warning {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+}
+
+.settings-card-icon.accent {
+  background: rgba(250, 204, 21, 0.15);
+  color: #facc15;
+}
+
+.settings-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.settings-card-title h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Badge styles */
+.settings-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.settings-badge.active {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.settings-badge.trial {
+  background: rgba(250, 204, 21, 0.2);
+  color: #facc15;
+}
+
+.settings-badge.canceling {
+  background: rgba(251, 146, 60, 0.2);
+  color: #fb923c;
+}
+
+.settings-badge.canceled {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.settings-badge.inactive {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.settings-card-body {
+  padding: 0 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settings-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.settings-toggle-label {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.settings-field-label {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.settings-select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(8, 10, 16, 0.65);
+  color: var(--text-primary);
+  font-size: 0.88rem;
+}
+
+.settings-select:focus {
+  outline: none;
+  border-color: rgba(250, 204, 21, 0.55);
+}
+
+.settings-range {
+  width: 100%;
+  accent-color: #facc15;
+}
+
+.settings-preview-grid {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+/* Subscription info */
+.settings-subscription-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.settings-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings-info-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.settings-info-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.settings-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.settings-link-btn:hover:not(:disabled) {
+  color: var(--text-primary);
+}
+
+.settings-link-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.settings-link-btn svg {
+  opacity: 0.7;
+}
+
+/* Trial info */
+.settings-trial-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings-trial-time {
+  display: flex;
+  align-items: baseline;
+  gap: 0.375rem;
+}
+
+.settings-trial-remaining {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #facc15;
+}
+
+.settings-trial-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.settings-trial-ends {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.settings-inactive-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Error message */
+.settings-error {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid rgba(231, 76, 60, 0.4);
+  color: #f4c7c7;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+.settings-primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 999px;
+  background: #facc15;
+  color: #111827;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.settings-primary-btn:hover:not(:disabled) {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.settings-primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.settings-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.settings-secondary-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.settings-secondary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Expandable header */
+.settings-expandable-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.settings-expandable-header:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.settings-expandable-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.settings-expandable-chevron {
+  transition: transform 0.2s ease;
+}
+
+.settings-expandable-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+.settings-expandable-content {
+  padding: 0 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1rem;
+}
+
+.settings-expandable-content p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Pairing */
+.settings-pairing-input {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.settings-pairing-input input {
+  flex: 1;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(8, 10, 16, 0.6);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.settings-pairing-input input:focus {
+  outline: none;
+  border-color: rgba(250, 204, 21, 0.5);
+}
+
+.settings-pairing-result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.settings-pairing-code {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-family: monospace;
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.settings-copy-btn {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.settings-copy-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.settings-pairing-expiry {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
+
+/* Device info */
+.settings-device-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  margin-bottom: 0.25rem;
+}
+
+.settings-device-count {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Footer */
+.settings-footer {
+  padding: 1rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.settings-version {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.settings-support-link {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.settings-support-link:hover {
+  color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .settings-layout {
+    flex-direction: column;
+  }
+
+  .settings-content-scroll {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .settings-section-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .settings-card-header {
+    padding: 0.875rem 1rem;
+  }
+
+  .settings-card-body {
+    padding: 0 1rem 1rem;
+  }
+
+  .settings-trial-remaining {
+    font-size: 1.25rem;
+  }
+
+  .settings-pairing-input {
+    flex-direction: column;
+  }
+}

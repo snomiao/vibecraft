@@ -1,0 +1,398 @@
+/* Canvas entities */
+.entity {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.entity:hover {
+  filter: brightness(1.1);
+}
+
+/* Hitboxes - invisible clickable areas centered on the icon */
+.unit-hitbox,
+.building-hitbox {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+
+/* Agent hitbox - centered on the agent icon (48x48), expanded to 56x56 */
+.agent-hitbox {
+  width: 56px;
+  height: 56px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Hero hitbox - centered on the hero icon (64x64), expanded to 72x72 */
+.hero-hitbox {
+  width: 72px;
+  height: 72px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Folder hitbox - centered on the folder icon (80x80), expanded to 88x88 */
+.folder-hitbox {
+  width: 88px;
+  height: 88px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Ground selection circles - centered on the unit icon */
+.selection-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border: 3px solid var(--success);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.selection-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border: 3px solid var(--success);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Hero gets a larger selection circle */
+.hero-entity .selection-circle,
+.hero-entity .selection-ring {
+  width: 80px;
+  height: 80px;
+}
+
+.windowed-selection-shield {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  pointer-events: auto;
+  z-index: 5;
+}
+
+/* Unit overhead elements (nameplate, context bar) - positioned above the icon */
+.unit-overhead {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 6px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.unit-nameplate {
+  font-family: var(--font-base);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hero-nameplate {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.7);
+}
+
+.unit-context-bar {
+  width: 48px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.unit-context-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 1px;
+}
+
+.unit-context-bar.context-green .unit-context-fill {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--success) 85%, white 15%), var(--success));
+}
+
+.unit-context-bar.context-yellow .unit-context-fill {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--warning) 85%, white 15%), var(--warning));
+}
+
+.unit-context-bar.context-red .unit-context-fill {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--error) 85%, white 15%), var(--error));
+}
+
+/* Hero */
+.hero-entity .hero-unit {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-entity .hero-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Thinking bubble - speech-bubble with animated dots */
+.hero-thinking-bubble {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 4px 7px;
+  pointer-events: none;
+  z-index: 10;
+  animation: hero-bubble-appear 0.2s ease-out;
+}
+
+.hero-thinking-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 6px;
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.hero-thinking-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-gold, #f0c040);
+  opacity: 0.3;
+  animation: hero-thinking-dot 0.9s infinite;
+}
+
+.hero-thinking-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.hero-thinking-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes hero-thinking-dot {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-bubble-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Agent entity */
+.agent-entity .agent-unit {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  pointer-events: none;
+}
+
+.agent-entity .agent-unit * {
+  pointer-events: none;
+}
+
+.agent-entity .agent-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.agent-entity .status-indicator {
+  position: absolute;
+  bottom: 4px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-primary);
+}
+
+.agent-entity .completion-indicator {
+  position: absolute;
+  top: 4px;
+  right: -1px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-primary);
+  background: var(--error);
+}
+
+.agent-entity .agent-terminal-badge {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 18px;
+  height: 18px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.agent-entity .agent-terminal-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.agent-entity.thinking .status-indicator {
+  transform-origin: center;
+  will-change: transform, opacity;
+  animation: agent-thinking-status-pulse 1s ease-in-out infinite;
+}
+
+@keyframes agent-thinking-status-pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+.workspace-canvas-stage.perf-reduced .selection-ring,
+.workspace-canvas-stage.perf-reduced .selection-circle {
+  opacity: 0.8;
+}
+
+.workspace-canvas-stage.perf-reduced .entity,
+.workspace-canvas-stage.pan-optimizing .entity {
+  transition: none;
+}
+
+.workspace-canvas-stage.perf-reduced .unit-context-fill,
+.workspace-canvas-stage.pan-optimizing .unit-context-fill {
+  transition: none;
+}
+
+.workspace-canvas-stage.perf-reduced .agent-icon,
+.workspace-canvas-stage.perf-reduced .hero-unit,
+.workspace-canvas-stage.pan-optimizing .agent-icon,
+.workspace-canvas-stage.pan-optimizing .hero-unit {
+  filter: none;
+}
+
+.workspace-canvas-stage.perf-reduced .agent-entity.thinking .status-indicator,
+.workspace-canvas-stage.pan-optimizing .agent-entity.thinking .status-indicator {
+  animation-duration: 1.4s;
+}
+
+.workspace-canvas-stage.perf-reduced .hero-thinking-dot,
+.workspace-canvas-stage.pan-optimizing .hero-thinking-dot {
+  animation-duration: 1.4s;
+}
+
+.workspace-canvas-stage.pan-optimizing .selection-ring,
+.workspace-canvas-stage.pan-optimizing .selection-circle {
+  display: none;
+}
+
+/* Token consumption floaters (WC3-style resource gain) */
+.token-floater-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 101;
+  overflow: visible;
+}
+
+.token-floater {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 30px;
+  font-family: var(--font-base);
+  font-size: 14px;
+  font-weight: 700;
+  color: #44e544;
+  text-shadow:
+    0 0 4px rgba(50, 200, 50, 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.9);
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: token-float-up 1s ease-out forwards;
+}
+
+@keyframes token-float-up {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1.1);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-6px) scale(1);
+  }
+  60% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-36px);
+  }
+}
+
+.workspace-canvas-stage.perf-reduced .token-floater-container,
+.workspace-canvas-stage.pan-optimizing .token-floater-container {
+  display: none;
+}

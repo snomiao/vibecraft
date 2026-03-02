@@ -1,0 +1,33 @@
+/* Local font faces for offline/packaged builds */
+
+/* Cinzel (400, 600, 700) */
+@font-face {
+  font-family: 'Cinzel';
+  src:
+    local('Cinzel Regular'),
+    local('Cinzel'),
+    url('../assets/fonts/Cinzel-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cinzel';
+  src:
+    local('Cinzel SemiBold'),
+    local('Cinzel'),
+    url('../assets/fonts/Cinzel-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cinzel';
+  src:
+    local('Cinzel Bold'),
+    local('Cinzel'),
+    url('../assets/fonts/Cinzel-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
